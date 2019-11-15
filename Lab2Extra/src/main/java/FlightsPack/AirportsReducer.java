@@ -10,7 +10,8 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
     protected void reduce (KeyDepartArrive key, Iterable<Text> value, Context context) throws IOException,InterruptedException {
         Iterator<Text> iter = value.iterator();
         Text delay = new Text(iter.next());
-        int count = 0;
+        int count = 0; //canceled
+        int countD = 0;
         double MaxDel = 0;
         int all_count = 0;
 
@@ -19,6 +20,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
             if (MaxDel < dd)
                 MaxDel = dd;
             all_count++;
+            countD = 0;
         }else {
             count++;
             all_count++;
@@ -31,6 +33,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
                 if (MaxDel < dd)
                     MaxDel = dd;
                 all_count++;
+                countD = 0;
             }else {
                 count++;
                 all_count++;
