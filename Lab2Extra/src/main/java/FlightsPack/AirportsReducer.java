@@ -61,8 +61,8 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         }else{
             per =all_count;
         }
-        
-        Text out = new Text("Max: " + MaxDel + " % Canceled: " + per + "% Del:");
+
+        Text out = new Text("Max: " + MaxDel + " Canceled: " + per + "% Del:");
         context.write (new Text(itg), out);
         //context.write (new Text(itg), new Text(itgg));
     }
