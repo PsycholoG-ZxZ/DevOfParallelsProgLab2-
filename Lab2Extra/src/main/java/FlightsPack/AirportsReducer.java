@@ -10,10 +10,18 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
     protected void reduce (KeyDepartArrive key, Iterable<Text> value, Context context) throws IOException,InterruptedException {
         Iterator<Text> iter = value.iterator();
         Text delay = new Text(iter.next());
-
-        //double dd = Double.parseDouble(delay.toString());
-        //double old_dd = dd;
         int count = 0;
+
+        if (delay.toString() != "") {
+            double dd = Double.parseDouble(delay.toString());
+
+        }else {
+            count++;
+            double dd = -999999;
+        }
+        //double old_dd = dd;
+
+        boolean flag = iter.hasNext();
         /*while (iter.hasNext()){
             String del_string =iter.next().toString();
             if ((del_string != "\n") && (del_string != "")) {
@@ -23,7 +31,6 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
                 count++;
             }
         }*/
-        boolean flag = iter.hasNext();
 
         String a = key.getArr_id();
         String b = key.getDep_id();
