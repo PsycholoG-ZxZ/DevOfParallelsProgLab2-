@@ -20,19 +20,14 @@ public class KeyDepartArrive implements WritableComparable<KeyDepartArrive> {
         Dep_id = new Text(Dep);
     }
 
-    @Override
     public void readFields(DataInput inpt) throws IOException {
-        aeroport_id.readFields(inpt);
-        base.readFields(inpt);
+        Arr_id.readFields(inpt);
+        Dep_id.readFields(inpt);
     }
 
-    public static int compare (int a, int b){
-        return Integer.compare(a,b);
-    }
 
-    @Override
     public void write (DataOutput out) throws IOException{
-        aeroport_id.write(out);
-        base.write(out);
+        Arr_id.write(out);
+        Dep_id.write(out);
     }
 }
