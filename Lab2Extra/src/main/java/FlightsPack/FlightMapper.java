@@ -14,7 +14,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, KeyDepartArrive, Te
 
     protected void map(LongWritable key, Text value, Context context) throws IOException,InterruptedException {
         String data[] =CSVParser.parseSmall(value);
-        if (CSVParser.CheckStringSecCsv(data[DELAY])) {return; }
+        if (CSVParser.CheckStringSecCsv(data[DELAY])) {
+            return;
+        }
         String Arr_id = data[ID_AIRPORT_ARR];
         String Dest_id = data[ID_AIRPORT_DEST];
         KeyDepartArrive aKey = new KeyDepartArrive(CSVParser.RemoveSlash(Arr_id), CSVParser.RemoveSlash(Dest_id) );
