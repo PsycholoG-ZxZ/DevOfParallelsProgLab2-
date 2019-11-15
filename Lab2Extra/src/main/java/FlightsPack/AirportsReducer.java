@@ -23,6 +23,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
             count++;
             all_count++;
         }
+       /*
         while (iter.hasNext()){
             String string_delay = iter.next().toString();
             if (!delay.toString().equals("")) {
@@ -35,7 +36,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
                 all_count++;
             }
         }
-
+*/
         String itgg = delay.toString();
         while (iter.hasNext()){
             String string_delay = iter.next().toString();
