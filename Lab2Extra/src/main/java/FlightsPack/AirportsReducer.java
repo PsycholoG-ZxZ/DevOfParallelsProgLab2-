@@ -31,8 +31,8 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         String a = key.getArr_id();
         String b = key.getDep_id();
         //String itg = " Old: "+old_dd + " Max: " + dd + " Count: " + count ;
-        String itg = " " + flag;
+        String itg = a +" " + b;
         Text out = new Text(itg);
-        context.write (delay, new Text(otp));
+        context.write (itg, new Text(otp));
     }
 }
