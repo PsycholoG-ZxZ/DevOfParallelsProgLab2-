@@ -8,7 +8,7 @@ import org.apache.hadoop.io.Text;
 public class CSVParser {
 
     private static String FRST_TABLE="Code,Description";
-    private static String SEC_TABLE="\"ARR_DELAY\"";
+    private static String SEC_TABLE="\"ARR_DELAY_NEW\"";
 
     public static String[] parseIdDescr(Text str) {
         String[] data = str.toString().split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
