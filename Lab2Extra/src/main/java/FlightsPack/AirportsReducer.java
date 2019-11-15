@@ -13,9 +13,9 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
 
         int i = 0;
 
-        while (iter.hasNext()){
-            i++;
-        }
+        //while (iter.hasNext()){
+         //   i++;
+        //}
 
         String a = key.getArr_id();
         String b = key.getDep_id();
