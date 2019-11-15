@@ -20,7 +20,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
             if (MaxDel < dd)
                 MaxDel = dd;
             all_count++;
-            countD = 0;
+            countD++;
         }else {
             count++;
             all_count++;
@@ -33,7 +33,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
                 if (MaxDel < dd)
                     MaxDel = dd;
                 all_count++;
-                countD = 0;
+                countD++;
             }else {
                 count++;
                 all_count++;
@@ -50,12 +50,19 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         String b = key.getDep_id();
         String itg = a +" " + b;
         double per;
+        double perD;
         if (count != 0) {
-            per = all_count / count;
+            per = (double) all_count / count;
         }else{
             per =all_count;
         }
-        Text out = new Text("Max: " + MaxDel + " Percent: " + per);
+        if (countD != 0) {
+            per = (double) all_count / countD;
+        }else{
+            per =all_count;
+        }
+        
+        Text out = new Text("Max: " + MaxDel + " % Canceled: " + per + "% Del:");
         context.write (new Text(itg), out);
         //context.write (new Text(itg), new Text(itgg));
     }
