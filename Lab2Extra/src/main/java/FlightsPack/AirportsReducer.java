@@ -26,8 +26,8 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
 
         while (iter.hasNext()){
             String string_delay = iter.next().toString();
-            if (!delay.toString().equals("")) {
-                double dd = Double.parseDouble(delay.toString());
+            if (!string_delay.toString().equals("")) {
+                double dd = Double.parseDouble(string_delay);
                 if (MaxDel < dd)
                     MaxDel = dd;
                 all_count++;
