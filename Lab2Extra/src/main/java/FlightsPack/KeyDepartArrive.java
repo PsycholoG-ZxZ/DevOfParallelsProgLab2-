@@ -25,11 +25,11 @@ public class KeyDepartArrive implements WritableComparable<KeyDepartArrive> {
         Dep_id.readFields(inpt);
     }
 
-    public Text getArr_id(){
+    public String getArr_id(){
         return this.Arr_id;
     }
 
-    public Text getDep_id(){
+    public String getDep_id(){
         return this.Dep_id;
     }
 
