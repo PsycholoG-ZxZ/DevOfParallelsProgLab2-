@@ -11,28 +11,36 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         Iterator<Text> iter = value.iterator();
         Text delay = new Text(iter.next());
         int count = 0;
+        double MaxDel = -999999;
+        int all_count = 0;
 
         if (!delay.toString().equals("")) {
             double dd = Double.parseDouble(delay.toString());
-
+            if (MaxDel < dd)
+                MaxDel = dd;
+            all_count++;
         }else {
             count++;
-            int dd = -999999;
+            all_count++;
         }
-
-        //double old_dd = dd;
-        String otp = delay.toString();
-        boolean flag = iter.hasNext();
         while (iter.hasNext()){
-            String neww = iter.next().toString();
-            otp = otp +" " + neww;
+            String string_delay = iter.next().toString();
+            if (!delay.toString().equals("")) {
+                double dd = Double.parseDouble(delay.toString());
+                if (MaxDel < dd)
+                    MaxDel = dd;
+                all_count++;
+            }else {
+                count++;
+                all_count++;
+            }
         }
 
         String a = key.getArr_id();
         String b = key.getDep_id();
-        //String itg = " Old: "+old_dd + " Max: " + dd + " Count: " + count ;
         String itg = a +" " + b;
-        Text out = new Text(itg);
-        context.write (new Text(itg), new Text(otp));
+        double per = all_count / count;
+        Text out = new Text("Max: " + MaxDel + " Percent: " + per);
+        context.write (new Text(itg), out);
     }
 }
