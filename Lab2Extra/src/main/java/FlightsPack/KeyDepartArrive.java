@@ -30,4 +30,13 @@ public class KeyDepartArrive implements WritableComparable<KeyDepartArrive> {
         Arr_id.write(out);
         Dep_id.write(out);
     }
+
+    public int compareTo(KeyDepartArrive keyNeitr) {
+        int act = Arr_id.compareTo(keyNeitr.Arr_id);
+        if (act != 0)
+            return act;
+        return Dep_id.compareTo(keyNeitr.Dep_id);
+
+    }
+
 }
