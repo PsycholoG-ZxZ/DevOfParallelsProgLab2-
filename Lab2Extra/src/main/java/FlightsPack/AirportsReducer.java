@@ -11,12 +11,15 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         Iterator<Text> iter = value.iterator();
         Text delay = new Text(iter.next());
         double dd = Double.parseDouble(delay.toString());
-
-        While
+        double old_dd = dd;
+        while (iter.hasNext()){
+            double del = Double.parseDouble(iter.next().toString());
+            if (dd < del) dd = del;
+        }
 
         String a = key.getArr_id();
         String b = key.getDep_id();
-        String itg = " " + i;
+        String itg = " "+old_dd + " " + dd ;
         Text out = new Text(itg);
         context.write (delay, out );
     }
