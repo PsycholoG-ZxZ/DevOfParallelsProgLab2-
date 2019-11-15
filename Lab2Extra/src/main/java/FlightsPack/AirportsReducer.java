@@ -42,7 +42,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         if (count != 0) {
             double per = all_count / count;
         }else{
-            double pre =all_count;
+            double per =all_count;
         }
         Text out = new Text("Max: " + MaxDel + " Percent: " + per);
         context.write (new Text(itg), out);
