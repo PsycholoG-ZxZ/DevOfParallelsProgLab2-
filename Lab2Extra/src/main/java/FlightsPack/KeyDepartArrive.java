@@ -11,7 +11,10 @@ public class KeyDepartArrive implements WritableComparable<KeyDepartArrive> {
         this.Dep_id = new Text();
     }
 
-    public KeyDepartArrive(){
-
+    public KeyDepartArrive(String Arr, String Dep){
+        Arr_id = new Text(Arr);
+        Dep_id = new Text(Dep);
     }
+
+
 }
