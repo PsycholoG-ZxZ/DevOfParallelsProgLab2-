@@ -23,7 +23,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
             count++;
             all_count++;
         }
-       /*
+
         while (iter.hasNext()){
             String string_delay = iter.next().toString();
             if (!delay.toString().equals("")) {
@@ -36,13 +36,13 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
                 all_count++;
             }
         }
-*/
+/*
         String itgg = delay.toString();
         while (iter.hasNext()){
             String string_delay = iter.next().toString();
             itgg = itgg +" " +string_delay;
         }
-
+*/
         String a = key.getArr_id();
         String b = key.getDep_id();
         String itg = a +" " + b;
@@ -53,6 +53,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
             per =all_count;
         }
         Text out = new Text("Max: " + MaxDel + " Percent: " + per);
-        context.write (new Text(itg), new Text(itgg));
+        context.write (new Text(itg), out);
+        //context.write (new Text(itg), new Text(itgg));
     }
 }
