@@ -20,7 +20,9 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
             if (MaxDel < dd)
                 MaxDel = dd;
             all_count++;
-            countD++;
+            if (dd == 0) {
+                countD++;
+            }
         }else {
             count++;
             all_count++;
@@ -33,7 +35,9 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
                 if (MaxDel < dd)
                     MaxDel = dd;
                 all_count++;
-                countD++;
+                if (dd == 0) {
+                    countD++;
+                }
             }else {
                 count++;
                 all_count++;
