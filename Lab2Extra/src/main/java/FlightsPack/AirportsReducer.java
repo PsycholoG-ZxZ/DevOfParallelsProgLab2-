@@ -13,8 +13,11 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         double dd = Double.parseDouble(delay.toString());
         double old_dd = dd;
         while (iter.hasNext()){
-            double del = Double.parseDouble(iter.next().toString());
-            if (dd < del) dd = del;
+            String del_string =iter.next().toString();
+            if (del_string != "") {
+                double del = Double.parseDouble(del_string);
+                if (dd < del) dd = del;
+            }
         }
 
         String a = key.getArr_id();
