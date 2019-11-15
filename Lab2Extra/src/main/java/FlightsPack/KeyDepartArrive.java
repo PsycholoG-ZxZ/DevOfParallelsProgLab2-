@@ -25,6 +25,14 @@ public class KeyDepartArrive implements WritableComparable<KeyDepartArrive> {
         Dep_id.readFields(inpt);
     }
 
+    public Text getArr_id(){
+        return this.Arr_id;
+    }
+
+    public Text getDep_id(){
+        return this.Dep_id;
+    }
+
 
     public void write (DataOutput out) throws IOException{
         Arr_id.write(out);

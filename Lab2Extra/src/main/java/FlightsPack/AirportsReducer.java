@@ -17,6 +17,6 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         double LowDelay = 999999999;
         double sum = 0;
         int i = 0;
-        context.write (check, new Text(" ПРОВЕРКА "));
+        context.write (check, key);
     }
 }
