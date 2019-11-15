@@ -11,7 +11,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         Iterator<Text> iter = value.iterator();
         Text delay = new Text(iter.next());
         int count = 0;
-/*
+
         if (delay.toString() != "") {
             int dd = Integer.parseInt(delay.toString());
 
@@ -19,7 +19,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
             count++;
             int dd = -999999;
         }
-*/
+
         //double old_dd = dd;
         String otp = delay.toString();
         boolean flag = iter.hasNext();
