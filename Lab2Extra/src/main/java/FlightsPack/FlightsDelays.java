@@ -19,7 +19,6 @@ public class FlightsDelays {
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         Path outputPath = new Path(args[1]);
-        job.setGroupingComparatorClass(GroupingComparator.class);
         job.setReducerClass(AirportsReducer.class);
         job.setMapOutputKeyClass(KeyDepartArrive.class);
         job.setOutputKeyClass(Text.class);

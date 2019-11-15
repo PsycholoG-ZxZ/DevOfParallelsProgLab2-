@@ -1,4 +1,4 @@
 package FlightsPack;
 
-public class AirportsReducer {
+public class AirportsReducer  {
 }
