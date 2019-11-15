@@ -26,11 +26,11 @@ public class KeyDepartArrive implements WritableComparable<KeyDepartArrive> {
     }
 
     public String getArr_id(){
-        return this.Arr_id;
+        return this.Arr_id.toString();
     }
 
     public String getDep_id(){
-        return this.Dep_id;
+        return this.Dep_id.toString();
     }
 
 

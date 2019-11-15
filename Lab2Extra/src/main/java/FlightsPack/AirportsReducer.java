@@ -19,7 +19,8 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         int i = 0;
         String a = key.getArr_id();
         String b = key.getDep_id();
-
-        context.write (check, key.getArr_id(), );
+        String itg = a + " " + b;
+        Text out = new Text(itg);
+        context.write (check, out );
     }
 }
