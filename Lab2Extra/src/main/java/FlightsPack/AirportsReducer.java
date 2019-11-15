@@ -58,8 +58,9 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         per = (double)  count / all_count;
         perD = (double) countD / all_count;
         per = per *100;
-        per = Math.round(per * 100.0) /
+        per = Math.round(per * 100.0) / 100.0;
         perD = perD *100;
+        perD = Math.round(perD * 100.0) / 100.0;
         Text out = new Text("Max: " + MaxDel + "| Canceled: " + per + "% Del:" + perD +"%");
         context.write (new Text(itg), out);
         //context.write (new Text(itg), new Text(itgg));
