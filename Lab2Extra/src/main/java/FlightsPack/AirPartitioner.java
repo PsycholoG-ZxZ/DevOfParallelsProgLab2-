@@ -1,4 +1,4 @@
-package FlightDelaysPack;
+package FlightsPack;
 
 import FlightsPack.KeyDepartArrive;
 import org.apache.hadoop.io.Text;
