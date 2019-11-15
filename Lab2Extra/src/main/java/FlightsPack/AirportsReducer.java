@@ -14,7 +14,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         int i = 0;
 
         while (iter.hasNext()){
-            i++
+            i++;
 
         }
 
