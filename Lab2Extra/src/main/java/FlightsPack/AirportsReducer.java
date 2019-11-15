@@ -15,7 +15,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         int count = 0;
         while (iter.hasNext()){
             String del_string =iter.next().toString();
-            if (del_string != "") {
+            if (del_string != "\n") {
                 double del = Double.parseDouble(del_string);
                 if (dd < del) dd = del;
             }else {
