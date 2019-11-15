@@ -10,16 +10,15 @@ import org.apache.hadoop.conf.Configuration;
 
 public class FlightsDelays {
     public static void main (String[] args) throws Exception {
-        if (args.length != 3) System.exit(-1);
+        if (args.length != 2) System.exit(-1);
 
         Job job = Job.getInstance();
         Configuration conf = new Configuration();
-        job.setJarByClass(ConnectingDelaysFlights.class);
+        job.setJarByClass(FlightsDelays.class);
         job.setJobName("Connecting");
-        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightMapper.class);
-        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirportMapper.class);
-        FileOutputFormat.setOutputPath(job, new Path(args[2]));
-        Path outputPath = new Path(args[2]);
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        Path outputPath = new Path(args[1]);
         job.setPartitionerClass(AirPartitioner.class);
         job.setGroupingComparatorClass(GroupingComparator.class);
         job.setReducerClass(AirportsReducer.class);
