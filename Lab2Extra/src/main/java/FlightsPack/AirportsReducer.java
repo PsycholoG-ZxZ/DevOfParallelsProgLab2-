@@ -12,13 +12,14 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         Text delay = new Text(iter.next());
         int count = 0;
 
-        if (delay.toString() != "") {
+       /* if (delay.toString() != "") {
             double dd = Double.parseDouble(delay.toString());
 
         }else {
             count++;
             double dd = -999999;
         }
+*/
         //double old_dd = dd;
 
         boolean flag = iter.hasNext();
@@ -37,6 +38,6 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         //String itg = " Old: "+old_dd + " Max: " + dd + " Count: " + count ;
         String itg = " " + flag;
         Text out = new Text(itg);
-        context.write (delay, out );
+        context.write (delay,  );
     }
 }
