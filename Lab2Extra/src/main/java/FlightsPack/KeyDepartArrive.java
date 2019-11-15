@@ -1,4 +1,6 @@
 package FlightsPack;
 
-public class KeyDepartArrive {
+import org.apache.hadoop.io.WritableComparable;
+
+public class KeyDepartArrive implements WritableComparable<KeyIDnBase> { {
 }
