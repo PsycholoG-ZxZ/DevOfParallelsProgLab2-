@@ -21,7 +21,7 @@ public class FlightsDelays {
         Path outputPath = new Path(args[1]);
         job.setGroupingComparatorClass(GroupingComparator.class);
         job.setReducerClass(AirportsReducer.class);
-        job.setMapOutputKeyClass(KeyIDnBase.class);
+        job.setMapOutputKeyClass(KeyDepartArrive.class);
         job.setOutputKeyClass(Text.class);
 
         job.setOutputValueClass(Text.class);
