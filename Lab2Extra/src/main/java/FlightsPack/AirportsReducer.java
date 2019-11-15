@@ -33,6 +33,6 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         //String itg = " Old: "+old_dd + " Max: " + dd + " Count: " + count ;
         String itg = a +" " + b;
         Text out = new Text(itg);
-        context.write (itg, new Text(otp));
+        context.write (new Text(itg), new Text(otp));
     }
 }
