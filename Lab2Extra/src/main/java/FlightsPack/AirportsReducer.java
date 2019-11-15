@@ -12,7 +12,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         Text delay = new Text(iter.next());
         int count = 0;
 
-        if (delay.toString() != "") {
+        if (!delay.toString().equals("")) {
             double dd = Double.parseDouble(delay.toString());
 
         }else {
