@@ -11,7 +11,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         Iterator<Text> iter = value.iterator();
         Text delay = new Text(iter.next());
         int count = 0;
-        double MaxDel = -999999;
+        double MaxDel = 0;
         int all_count = 0;
 
         if (!delay.toString().equals("")) {

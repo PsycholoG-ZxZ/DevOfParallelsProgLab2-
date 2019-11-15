@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class FlightMapper extends Mapper<LongWritable, Text, KeyDepartArrive, Text>  {
 
-    private static int DELAY = 17, ID_AIRPORT_DEST = 14, ID_AIRPORT_ARR = 11,  SEC_TABLE_ID = 1;
+    private static int DELAY = 18, ID_AIRPORT_DEST = 14, ID_AIRPORT_ARR = 11,  SEC_TABLE_ID = 1;
 
     @Override
 
