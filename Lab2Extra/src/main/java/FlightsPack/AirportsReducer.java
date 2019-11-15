@@ -49,7 +49,7 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         String a = key.getArr_id();
         String b = key.getDep_id();
         String itg = a +" " + b;
-        double per = 0;
+        double per;
         if (count != 0) {
             per = all_count / count;
         }else{
