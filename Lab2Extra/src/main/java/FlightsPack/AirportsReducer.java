@@ -17,6 +17,8 @@ public class AirportsReducer extends Reducer<KeyDepartArrive, Text, Text, Text> 
         double LowDelay = 999999999;
         double sum = 0;
         int i = 0;
-        context.write (check, key);
+        String a = key.getArr_id();
+        String b
+        context.write (check, key.getArr_id(), );
     }
 }
